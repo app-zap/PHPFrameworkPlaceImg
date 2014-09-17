@@ -40,6 +40,7 @@ The following providers are supported at the moment:
 *  `placecage` - [placecage.com](http://placecage.com/)
 *  `placehold` - [placehold.it](http://placehold.it/)
 *  `placekitten` - [placekitten.com](http://placekitten.com/)
+*  `placepuppy` - [placepuppy.it](http://placepuppy.it/)
 
 ## Dislaimer
 

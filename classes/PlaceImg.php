@@ -16,6 +16,8 @@ class PlaceImg {
     $format = '';
     if ($placeimg_provider === 'placehold') {
       $format = 'http://placehold.it/%sx%s';
+    } elseif ($placeimg_provider === 'placepuppy') {
+      $format = 'http://placepuppy.it/%s/%s';
     } elseif (in_array($placeimg_provider, [
         'placekitten', 'lorempixel', 'dummyimage', 'nicenicejpg',
         'placecage', 'fillmurray', 'placebear', 'baconmockup',
