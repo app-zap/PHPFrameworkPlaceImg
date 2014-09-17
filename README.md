@@ -14,9 +14,13 @@ Place following code into the `initialize()` method of handler class:
       return \AppZap\PHPFrameworkPlaceImg\PlaceImg::placeImg($width, $height, $attributes);
     });
 
-After that you can use `{{ placeimg(200, 300) }}` in your twig templates and will get a ready-to-use img tag (e.g. `<img src="lorempixel.com/200/300" />`) with a dummy image.
+After that you can use `{{ placeimg(300, 200) }}` in your twig templates and will get a ready-to-use img tag (e.g. `<img src="http://lorempixel.com/300/200" />`) with a dummy image.
 
-Optionally you can provide additional attributes as a third parameter:  `{{ placeimg(200, 300, 'class="mainimage"')}}`.
+Optionally you can provide additional attributes as a third parameter:  `{{ placeimg(300, 200, 'class="mainimage"')}}`.
+
+***Example:***
+
+<img src="http://lorempixel.com/300/200" />
 
 ## Configuration
 
