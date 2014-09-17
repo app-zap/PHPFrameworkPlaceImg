@@ -8,7 +8,7 @@ It provides a function that returns HTML placeholder image tags and is built to 
 
 ## How to use
 
-Place following code into the `initialize()` method of handler class:
+Place following code into the `initialize()` method of a handler class:
 
     $this->response->add_output_function('placeimg', function($width, $height, $attributes = '') {
       return \AppZap\PHPFrameworkPlaceImg\PlaceImg::placeImg($width, $height, $attributes);
