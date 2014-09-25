@@ -11,12 +11,12 @@ class PlaceImg {
    * @param string $attributes
    * @return string
    */
-  public static function placeImg($width, $height, $attributes = '') {
+  public static function placeImg($width, $height, $attributes = '', $text = '') {
     $placeimg_provider = Configuration::get('application', 'placeimg_provider', 'lorempixel');
     $format = '';
-    if (in_array($placeimg_provider, [
-        'dummyimage', 'placehold'
-    ])) {
+    if ($placeimg_provider === 'dummyimage') {
+      $format = 'http://dummyimage.com/%sx%s.png&text=' . $text;
+    } elseif ($placeimg_provider === 'placehold') {
       $format = 'http://placehold.it/%sx%s';
     } elseif ($placeimg_provider === 'placepuppy') {
       $format = 'http://placepuppy.it/%s/%s';
