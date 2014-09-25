@@ -14,12 +14,14 @@ class PlaceImg {
   public static function placeImg($width, $height, $attributes = '') {
     $placeimg_provider = Configuration::get('application', 'placeimg_provider', 'lorempixel');
     $format = '';
-    if ($placeimg_provider === 'placehold') {
+    if (in_array($placeimg_provider, [
+        'dummyimage', 'placehold'
+    ])) {
       $format = 'http://placehold.it/%sx%s';
     } elseif ($placeimg_provider === 'placepuppy') {
       $format = 'http://placepuppy.it/%s/%s';
     } elseif (in_array($placeimg_provider, [
-        'placekitten', 'lorempixel', 'dummyimage', 'nicenicejpg',
+        'placekitten', 'lorempixel', 'nicenicejpg',
         'placecage', 'fillmurray', 'placebear', 'baconmockup',
     ])) {
       $format = 'http://' . $placeimg_provider . '.com/%s/%s';
