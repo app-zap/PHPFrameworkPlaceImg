@@ -23,7 +23,7 @@ class PlaceImg {
     if ($placeimg_provider === 'dummyimage') {
       $format = 'http://dummyimage.com/%sx%s.png&text=' . $text;
     } elseif ($placeimg_provider === 'placehold') {
-      $format = 'http://placehold.it/%sx%s';
+      $format = 'http://placehold.it/%sx%s&text=' . $text;
     } elseif ($placeimg_provider === 'placepuppy') {
       $format = 'http://placepuppy.it/%s/%s';
     } elseif (in_array($placeimg_provider, [
