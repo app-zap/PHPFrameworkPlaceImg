@@ -13,6 +13,12 @@ class PlaceImg {
    */
   public static function placeImg($width, $height, $attributes = '', $text = '') {
     $placeimg_provider = Configuration::get('application', 'placeimg_provider', 'lorempixel');
+
+    // max size
+    if ($placeimg_provider === 'lorempixel' && ($width > 1920 || $height > 1920)) {
+      $placeimg_provider = 'dummyimage';
+    }
+
     $format = '';
     if ($placeimg_provider === 'dummyimage') {
       $format = 'http://dummyimage.com/%sx%s.png&text=' . $text;
