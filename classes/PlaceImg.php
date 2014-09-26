@@ -12,6 +12,17 @@ class PlaceImg {
    * @return string
    */
   public static function placeImg($width, $height, $attributes = '', $text = '') {
+    $url = self::placeImgUrl($width, $height, $text);
+    return '<img src="' . $url . '" ' . $attributes . '/>';
+  }
+
+  /**
+   * @param $width
+   * @param $height
+   * @param string $text
+   * @return string
+   */
+  public static function placeImgUrl($width, $height, $text = '') {
     $placeimg_provider = Configuration::get('application', 'placeimg_provider', 'lorempixel');
 
     // max size
@@ -32,7 +43,8 @@ class PlaceImg {
     ])) {
       $format = 'http://' . $placeimg_provider . '.com/%s/%s';
     }
-    return '<img src="' . sprintf($format, $width, $height) . '" ' . $attributes . '/>';
+    $url = sprintf($format, $width, $height);
+    return $url;
   }
 
 }
