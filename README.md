@@ -8,19 +8,15 @@ It provides a function that returns HTML placeholder image tags and is built to 
 
 ## How to use
 
-Place following code into the `initialize()` method of a handler class:
-
-    $this->response->add_output_function('placeimg', function($width, $height, $attributes = '') {
-      return \AppZap\PHPFrameworkPlaceImg\PlaceImg::placeImg($width, $height, $attributes);
-    });
-
-After that you can use `{{ placeimg(300, 200) }}` in your twig templates and will get a ready-to-use img tag (e.g. `<img src="http://lorempixel.com/300/200" />`) with a dummy image.
+Use `{{ placeimg(300, 200) }}` in your twig templates and will get a ready-to-use img tag (e.g. `<img src="http://lorempixel.com/300/200" />`) with a dummy image.
 
 Optionally you can provide additional attributes as a third parameter:  `{{ placeimg(300, 200, 'class="mainimage"')}}`.
 
 ***Example:***
 
 <img src="http://lorempixel.com/300/200" />
+
+You just want an image url? Try `{{ placeimg_url(300, 200) }}`!
 
 ## Configuration
 
