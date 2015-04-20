@@ -4,6 +4,7 @@
     "app-zap/phpframework": "dev-develop"
   },
   "autoload": {
+    "files": ["classes/PluginLoader.php"],
     "psr-4": {
       "AppZap\\PHPFrameworkPlaceImg\\": "classes/"
     }
