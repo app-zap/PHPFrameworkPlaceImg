@@ -37,12 +37,16 @@ class PlaceImg {
     } elseif ($placeimg_provider === 'placehold') {
       $format = 'http://placehold.it/%sx%s&text=' . $text;
     } elseif (in_array($placeimg_provider, [
-      'lorempixel', 'nicenicejpg', 'placecage',
-      'fillmurray', 'placebear', 'baconmockup',
+      'placecage', 'placebear',
     ])) {
       $format = 'http://' . $placeimg_provider . '.com/%s/%s';
+    } elseif (in_array($placeimg_provider, [
+      'lorempixel', 'nicenicejpg',
+      'fillmurray', 'baconmockup',
+    ])) {
+      $format = 'http://' . $placeimg_provider . '.com/%s/%s/?%s';
     }
-    $url = sprintf($format, $width, $height);
+    $url = sprintf($format, $width, $height, rand(0,9999));
     return $url;
   }
 
