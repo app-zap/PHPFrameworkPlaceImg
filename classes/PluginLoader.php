@@ -18,16 +18,18 @@ class PluginLoader {
     );
   }
 
-  public function registerPlaceimgFunction(TwigView $response) {
+  public static function registerPlaceimgFunction(TwigView $response) {
     $response->addOutputFunction('placeimg', function($width, $height, $attributes = '') {
       return PlaceImg::placeImg($width, $height, $attributes, round($width / 2) . ' * ' . round($height / 2));
     });
   }
 
-  public function registerPlaceimgUrlFunction(TwigView $response) {
+  public static function registerPlaceimgUrlFunction(TwigView $response) {
     $response->addOutputFunction('placeimg_url', function($width, $height) {
       return PlaceImg::placeImgUrl($width, $height, round($width / 2) . ' * ' . round($height / 2));
     });
   }
 
 }
+
+new PluginLoader();
