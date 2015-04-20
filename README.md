@@ -35,10 +35,8 @@ The following providers are supported at the moment:
 *  `placebear` - [placebear.com](http://placebear.com/)
 *  `placecage` - [placecage.com](http://placecage.com/)
 *  `placehold` - [placehold.it](http://placehold.it/)
-*  `placekitten` - [placekitten.com](http://placekitten.com/)
-*  `placepuppy` - [placepuppy.it](http://placepuppy.it/)
 
-## Dislaimer
+## Disclaimer
 
 Please notice that I don't run these providers and there's no guarantee that they will be available for ever.
 
