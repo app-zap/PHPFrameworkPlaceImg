@@ -11,19 +11,20 @@ class PlaceImg {
    * @param string $attributes
    * @return string
    */
-  public static function placeImg($width, $height, $attributes = '', $text = '') {
-    $url = self::placeImgUrl($width, $height, $text);
+  public static function placeImg($width, $height, $attributes = '', $text = '', $provider = NULL) {
+    $url = self::placeImgUrl($width, $height, $text, $provider);
     return '<img src="' . $url . '" ' . $attributes . '/>';
   }
 
   /**
-   * @param $width
-   * @param $height
+   * @param int $width
+   * @param int $height
    * @param string $text
+   * @param string $provider
    * @return string
    */
-  public static function placeImgUrl($width, $height, $text = '') {
-    $placeimg_provider = Configuration::get('application', 'placeimg_provider', 'lorempixel');
+  public static function placeImgUrl($width, $height, $text = '', $provider = NULL) {
+    $placeimg_provider = $provider ?: Configuration::get('application', 'placeimg_provider', 'lorempixel');
 
     // max size
     if ($placeimg_provider === 'lorempixel' && ($width > 1920 || $height > 1920)) {
@@ -38,8 +39,8 @@ class PlaceImg {
     } elseif ($placeimg_provider === 'placepuppy') {
       $format = 'http://placepuppy.it/%s/%s';
     } elseif (in_array($placeimg_provider, [
-        'placekitten', 'lorempixel', 'nicenicejpg',
-        'placecage', 'fillmurray', 'placebear', 'baconmockup',
+      'placekitten', 'lorempixel', 'nicenicejpg',
+      'placecage', 'fillmurray', 'placebear', 'baconmockup',
     ])) {
       $format = 'http://' . $placeimg_provider . '.com/%s/%s';
     }
