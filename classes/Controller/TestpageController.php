@@ -10,7 +10,24 @@ class TestpageController extends AbstractController {
   }
 
   public function get() {
-
+    $this->response->set('providers', [
+      'baconmockup',
+      'dummyimage',
+      'fakeimg',
+      'fillmurray',
+      'lorempixel',
+      'nicenicejpg',
+      'p-hold',
+      'place-hoff',
+      'placebear',
+      'placebeard',
+      'placecage',
+      'placehold',
+      'placeimg',
+      'placesheen',
+      'stevensegallery',
+      'unsplash',
+    ]);
   }
 
 }

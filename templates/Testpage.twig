@@ -1,71 +1,41 @@
-<h1>This is the PlaceImg Plugin testpage!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PlaceImg Plugin testpage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <style type="text/css">
+    img {
+      height: auto;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>This is the PlaceImg Plugin testpage!</h1>
 
-<p>Test the availability of all supported providers:</p>
+  <p>Test the availability of all supported providers:</p>
 
-<h2>Default (derived from configuration)</h2>
-{{ placeimg(200,100) }}
-{{ placeimg_url(200,100) }}
+  <div class="row">
 
-<h2>baconmockup</h2>
-{{ placeimg(200,100,'','baconmockup') }}
-{{ placeimg_url(200,100,'baconmockup') }}
+    <div class="col-xs-6 col-md-4">
 
-<h2>dummyimage</h2>
-{{ placeimg(200,100,'','dummyimage') }}
-{{ placeimg_url(200,100,'dummyimage') }}
+      <h2>Default</h2>
+      {{ placeimg(600,400) }}
+      {{ placeimg_url(600,400) }}
+    </div>
 
-<h2>fakeimg</h2>
-{{ placeimg(200,100,'','fakeimg') }}
-{{ placeimg_url(200,100,'fakeimg') }}
+    {% for provider in providers %}
+      <div class="col-xs-6 col-md-4">
+        <h2>{{ provider }}</h2>
+        {{ placeimg(600,400,'', provider) }}
+        {{ placeimg_url(600,400, provider) }}
+      </div>
+    {% endfor %}
 
-<h2>fillmurray</h2>
-{{ placeimg(200,100,'','fillmurray') }}
-{{ placeimg_url(200,100,'fillmurray') }}
 
-<h2>lorempixel</h2>
-{{ placeimg(200,100,'','lorempixel') }}
-{{ placeimg_url(200,100,'lorempixel') }}
-
-<h2>nicenicejpg</h2>
-{{ placeimg(200,100,'','nicenicejpg') }}
-{{ placeimg_url(200,100,'nicenicejpg') }}
-
-<h2>p-hold</h2>
-{{ placeimg(200,100,'','p-hold') }}
-{{ placeimg_url(200,100,'p-hold') }}
-
-<h2>place-hoff</h2>
-{{ placeimg(200,100,'','place-hoff') }}
-{{ placeimg_url(200,100,'place-hoff') }}
-
-<h2>placebear</h2>
-{{ placeimg(200,100,'','placebear') }}
-{{ placeimg_url(200,100,'placebear') }}
-
-<h2>placebeard</h2>
-{{ placeimg(200,100,'','placebeard') }}
-{{ placeimg_url(200,100,'placebeard') }}
-
-<h2>placecage</h2>
-{{ placeimg(200,100,'','placecage') }}
-{{ placeimg_url(200,100,'placecage') }}
-
-<h2>placehold</h2>
-{{ placeimg(200,100,'','placehold') }}
-{{ placeimg_url(200,100,'placehold') }}
-
-<h2>placeimg</h2>
-{{ placeimg(200,100,'','placeimg') }}
-{{ placeimg_url(200,100,'placeimg') }}
-
-<h2>placesheen</h2>
-{{ placeimg(200,100,'','placesheen') }}
-{{ placeimg_url(200,100,'placesheen') }}
-
-<h2>stevensegallery</h2>
-{{ placeimg(200,100,'','stevensegallery') }}
-{{ placeimg_url(200,100,'stevensegallery') }}
-
-<h2>unsplash</h2>
-{{ placeimg(200,100,'','unsplash') }}
-{{ placeimg_url(200,100,'unsplash') }}
+  </div>
+</div>
+</body>
+</html>
