@@ -29,12 +29,20 @@ The following providers are supported at the moment:
 
 *  `baconmockup` - [baconmockup.com](http://baconmockup.com/)
 *  `dummyimage` - [dummyimage.com](http://dummyimage.com/)
+*  `fakeimg` - [fakeimg.pl](http://fakeimg.pl/)
 *  `fillmurray` - [fillmurray.com](http://fillmurray.com/)
 *  `lorempixel` - [lorempixel.com](http://lorempixel.com/) **(default)**
 *  `nicenicejpg` - [nicenicejpg.com](http://nicenicejpg.com/)
+*  `p-hold` - [p-hold.com](http://p-hold.com/)
+*  `place-hoff` - [place-hoff.com](http://place-hoff.com/)
 *  `placebear` - [placebear.com](http://placebear.com/)
+*  `placebeard` - [placebeard.com](http://placebeard.com/)
 *  `placecage` - [placecage.com](http://placecage.com/)
 *  `placehold` - [placehold.it](http://placehold.it/)
+*  `placeimg` - [placeimg.com](https://placeimg.com/)
+*  `placesheen` - [placesheen.com](https://placesheen.com/)
+*  `stevensegallery` - [stevensegallery.com](https://stevensegallery.com/)
+*  `unsplash` - [unsplash.it](https://unsplash.it/)
 
 ## Disclaimer
 

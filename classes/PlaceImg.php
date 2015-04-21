@@ -36,13 +36,25 @@ class PlaceImg {
       $format = 'http://dummyimage.com/%sx%s.png&text=' . $text;
     } elseif ($placeimg_provider === 'placehold') {
       $format = 'http://placehold.it/%sx%s&text=' . $text;
+    } elseif ($placeimg_provider === 'fakeimg') {
+      $format = 'http://fakeimg.pl/%sx%s/?text=' . $text;
     } elseif (in_array($placeimg_provider, [
-      'placecage', 'placebear',
+      // .it
+      'placebeard', 'unsplash',
+    ])) {
+      $format = 'http://' . $placeimg_provider . '.it/%s/%s/?%s';
+    } elseif (in_array($placeimg_provider, [
+      // .com without random number support
+      'placebear', 'placecage',
+      'placeimg', 'placesheen',
     ])) {
       $format = 'http://' . $placeimg_provider . '.com/%s/%s';
     } elseif (in_array($placeimg_provider, [
+      // .com with random number support
+      'baconmockup', 'fillmurray',
       'lorempixel', 'nicenicejpg',
-      'fillmurray', 'baconmockup',
+      'p-hold', 'place-hoff',
+      'stevensegallery',
     ])) {
       $format = 'http://' . $placeimg_provider . '.com/%s/%s/?%s';
     }
